@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <script>
+        let output = document.getElementById('output');
+        let persons = [
+            {
+                id: 101,
+                name: 'Asif Ahmed',
+                cgpa: 2.76
+            },
+            {
+                id: 102,
+                name: 'Rajib Biswas',
+                cgpa: 3.54
+            },
+            {
+                id: 103,
+                name: 'Karim Jannat',
+                cgpa: 3.7
+            },
+            {
+                id: 104,
+                name: 'Muaz',
+                cgpa: 3.3
+            },
+        ];
+        console.log(persons);
+
+        output.innerHTML = persons.map(function (x) {
+            return x.name;
+        }).filter(function (y) {
+            return y.length > 5;
+        });
+
+        let testtype = persons.map(function(x){
+            return x.name;
+        }).filter(function(y){
+                return y.length>5;
+            });
+
+    let showOutput = testtype.toString();
+    showOutput.replace( ",",'');
+    console.log(showOutput.replaceAll( ",",' or '));
+
+    function personName(){
+        return persons.filter(function(person){
+            return person.cgpa>3.5;
+        }).map(function(y){
+            return y.name;
+        })
+    }
+
+    console.log(personName());
+    </script>
+</body>
+
+</html>
