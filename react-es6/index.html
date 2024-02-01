@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React ES6</title>
+</head>
+<body>
+    <script>
+        class Car{
+            constructor(name,plate){
+                this.name = name;
+                this.plate=plate;
+            }
+
+            carModel() {
+                return this.name+"-"+this.plate;
+            }
+        }
+
+        const myCar = new Car("Mongo",34340);
+        console.log(myCar);
+        console.log(typeof(Car));
+        console.log(typeof(myCar));
+        console.log(myCar.carModel());
+
+        class Model extends Car{
+            constructor(name,plate,year){
+                super(name,plate);
+                this.year = year;
+            }
+
+            show() {
+                return this.carModel + ' is created on '+ this.year;
+            }
+        }
+
+        const tCar = new Model("Ford",34343,2021);
+        console.log(tCar);
+        console.log(tCar.show());
+    </script>
+    
+</body>
+</html>
